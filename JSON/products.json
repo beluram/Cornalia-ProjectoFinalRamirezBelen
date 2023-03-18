@@ -1,0 +1,98 @@
+[{
+    "id": 1,
+    "categoria" : "1",
+    "nombre": "Mochila Deportiva",
+    "valor": 12.500,
+    "imagen": "./src/assets/img/mochila1.jpg",
+    "dellates": "Con solapa y doble hebilla. Dos bolsillos frontales con cierre. Correas regulables y manija a contra tono. Forerría interna.."
+},
+{
+    "id": 2,
+    "categoria" : "1",
+    "nombre": "Mochila Lona porta-notebook",
+    "valor": 15.500,
+    "imagen": "./src/assets/img/mochila2.jpg",
+    "dellates": "Mochila con porta notebook, bolsillo frontal, correa regulable, color rosa pastel."
+},
+{
+    "id": 3,
+    "categoria" : "1",
+    "nombre": "Mochila con manijas",
+    "valor": 10.500,
+    "imagen": "./src/assets/img/mochila3.jpg",
+    "dellates": "Mochila con manijas, cierre frontal, forro interior, correa regulable, color mostaza."
+},
+{
+    "id": 4,
+    "categoria" : "2",
+    "nombre": "Cartera Azul",
+    "valor": 13.500,
+    "imagen": "./src/assets/img/cartera1.jpg",
+    "dellates": "Carta de manijas cortas, apliques de metal, color azul "
+},
+{
+    "id": 5,
+    "categoria" : "2",
+    "nombre": "Bandolera rojo y blanco",
+    "valor": 11.500,
+    "imagen": "./src/assets/img/cartera2.jpg",
+    "dellates": "Mochila tipo bandolera, correa regulable, colores rojo y blanco."
+},
+{
+    "id": 6,
+    "categoria" : "2",
+    "nombre": "Cartera Roja",
+    "valor": 12.500,
+    "imagen": "./src/assets/img/cartera3.jpg",
+    "dellates": "Cartera de cuerina, tipo animal print, correa corta, color rojo."
+},
+{
+    "id": 7,
+    "categoria" : "3",
+    "nombre": "Collar de perlas",
+    "valor": 2.500,
+    "imagen": "./src/assets/img/collar1.jpg",
+    "dellates": "Collar 40 centímetros, con piedras transparentes y perlas"
+},
+{
+    "id": 8,
+    "categoria" : "3",
+    "nombre": "Collar Trebol",
+    "valor": 1.800,
+    "imagen": "./src/assets/img/collar2.jpg",
+    "dellates": "Cadena con dije en forma de trebol."
+},
+{
+    "id": 9,
+    "categoria" : "4",
+    "nombre": "Aros celestes",
+    "valor": 1.500,
+    "imagen": "./src/assets/img/aros1.jpg",
+    "dellates": "Aros colantes con peidras en color celeste."
+},
+{
+    "id": 10,
+    "categoria" : "4",
+    "nombre": "Aros celestes y azul",
+    "valor": 1.500,
+    "imagen": "./src/assets/img/aros2.jpg",
+    "dellates": "Aros colgantes con piedras color celeste y azul."
+},
+{
+    "id": 11,
+    "categoria" : "5",
+    "nombre": "Aros y collar llave",
+    "valor": 3.500,
+    "imagen": "./src/assets/img/aroscollar1.jpg",
+    "dellates": "Aros y collar en conjunto. Aros colgantes con piedra ruby. Collar con dije de llave."
+},
+{
+    "id": 12,
+    "categoria" : "5",
+    "nombre": "Aros y collar piedras",
+    "valor": 3.500,
+    "imagen": "./src/assets/img/aroscollar2.jpg",
+    "dellates": "Aros y collar en conjunto, compuestos por piedras en tonos tierra combinados."
+    
+}
+]

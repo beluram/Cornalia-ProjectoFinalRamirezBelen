@@ -1,0 +1,18 @@
+
+.container{
+    color: #f6b0b0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family:Sans-serif;
+  }
+  
+.carrito{
+    display: flex;
+    padding: 10px;
+  }
+
+  .logo{
+    height: 100px;
+  }
