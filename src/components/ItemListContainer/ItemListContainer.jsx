@@ -1,11 +1,13 @@
-import styles from './ItemListContainer.module.css';
 
-const ItemListContainer = ({greeting}) => {
-    return (
-      <div className={styles.saludo}>
-        {greeting}
-      </div>
-    );
-  };
+import styles from './ItemListContainer.module.css';
+import Card from '../Card/Card';
+
+const ItemListContainer = ({products}) => {
+  return(
+    <div className={styles.productos}>
+      {products.map((product) => (<Card key={product.id} product={product}/>))}
+    </div>
+  );
+};
   
   export default ItemListContainer;
