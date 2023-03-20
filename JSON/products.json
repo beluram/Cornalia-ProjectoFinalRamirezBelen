@@ -1,7 +1,7 @@
 
 [{
     "id": 1,
-    "categoria" : 1,
+    "category" : "mochilas",
     "nombre": "Mochila Deportiva",
     "valor": 12500,
     "imagen": "/src/assets/img/mochila1.jpg",
@@ -9,7 +9,7 @@
 },
 {
     "id": 2,
-    "categoria" : 1,
+    "category" : "mochilas",
     "nombre": "Mochila de cuero rosa",
     "valor": 15500,
     "imagen": "/src/assets/img/mochila2.jpg",
@@ -17,7 +17,7 @@
 },
 {
     "id": 3,
-    "categoria" : 1,
+    "category" : "mochilas",
     "nombre": "Mochila con manijas",
     "valor": 10500,
     "imagen": "/src/assets/img/mochila3.jpg",
@@ -25,7 +25,7 @@
 },
 {
     "id": 4,
-    "categoria" : 2,
+    "category" : "carteras",
     "nombre": "Cartera Azul",
     "valor": 13500,
     "imagen": "/src/assets/img/cartera1.jpg",
@@ -33,7 +33,7 @@
 },
 {
     "id": 5,
-    "categoria" : 2,
+    "category" : "carteras",
     "nombre": "Bandolera rojo y blanco",
     "valor": 11500,
     "imagen": "/src/assets/img/cartera2.jpg",
@@ -41,7 +41,7 @@
 },
 {
     "id": 6,
-    "categoria" : 2,
+    "category" : "carteras",
     "nombre": "Cartera Roja",
     "valor": 12500,
     "imagen": "/src/assets/img/cartera3.jpg",
@@ -49,7 +49,7 @@
 },
 {
     "id": 7,
-    "categoria" : 3,
+    "category" : "bijouterie",
     "nombre": "Collar de perlas",
     "valor": 2500,
     "imagen": "/src/assets/img/collar1.jpg",
@@ -57,7 +57,7 @@
 },
 {
     "id": 8,
-    "categoria" : 3,
+    "category" : "bijouterie",
     "nombre": "Collar Trebol",
     "valor": 1800,
     "imagen": "/src/assets/img/collar2.jpg",
@@ -65,7 +65,7 @@
 },
 {
     "id": 9,
-    "categoria" : 3,
+    "category" : "bijouterie",
     "nombre": "Aros celestes",
     "valor": 1500,
     "imagen": "/src/assets/img/aros1.jpg",
@@ -73,7 +73,7 @@
 },
 {
     "id": 10,
-    "categoria" : 3,
+    "category" : "bijouterie",
     "nombre": "Aros celestes y azul",
     "valor": 1500,
     "imagen": "/src/assets/img/aros2.jpg",
@@ -81,7 +81,7 @@
 },
 {
     "id": 11,
-    "categoria" : 3,
+    "category" : "bijouterie",
     "nombre": "Aros y collar llave",
     "valor": 3500,
     "imagen": "/src/assets/img/aroscollar1.webp",
@@ -89,7 +89,7 @@
 },
 {
     "id": 12,
-    "categoria" : 3,
+    "category" : "bijouterie",
     "nombre": "Aros y collar piedras",
     "valor": 3500,
     "imagen": "/src/assets/img/aroscollar2.jpg",

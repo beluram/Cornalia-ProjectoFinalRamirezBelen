@@ -13,14 +13,14 @@ const Navbar = () => {
       <Link to="/home">
         <p>Inicio</p>
       </Link>
-      <Link to="/mochilas">
+      <Link to={"/mochilas"}>
         <p>Mochilas</p>
       </Link>
       <Link to="/carteras">
         <p>Carteras</p>
       </Link>
-      <Link to="/bijou">
-        <p>Bijou</p>
+      <Link to="/bijouterie">
+        <p>Bijouterie</p>
       </Link>
       <Link to= "/cart">
         <CartWidget/>
