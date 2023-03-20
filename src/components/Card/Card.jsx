@@ -3,7 +3,7 @@ import styles from "./card.module.css";
 
 const Card = ({product}) => {
   return (
-    <Link to={`${product.id}`}>
+    <Link to={`/item/${product.id}`}>
         <div className={styles.container}>
             <h1>{product.nombre}</h1>
             <img src={product.imagen} alt={product.nombre} width="400"/>
@@ -13,4 +13,4 @@ const Card = ({product}) => {
   )
 }
 
-export default Card
+export default Card;

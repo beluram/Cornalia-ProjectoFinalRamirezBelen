@@ -1,8 +1,16 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 
-const ItemDetailContainer = ({products}) => {
-    const { id } = useParams();
-    const product = products.find((product) => product.id == id);
+const ItemDetailContainer = () => {
+
+    const [product, setProduct] =useState({});
+    const{id} = useParams()
+      useEffect (()=>{
+        fetch("../JSON/products.json")
+        .then ((res) => res.json())
+        .then ((data) => setProduct(data.find((item)=> item.id === parseInt(id))));
+      }, [id])
+      
 
     return (
     <div>
@@ -14,4 +22,4 @@ const ItemDetailContainer = ({products}) => {
   )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
