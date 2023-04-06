@@ -1,16 +1,45 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import styles from "./card.module.css";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import {Button, CardActionArea, CardActions} from '@mui/material';
+import RemoveIcon from '@mui/icons-material/Remove';
 
-const Card = ({product}) => {
-  return (
-    <Link to={`/item/${product.id}`}>
+import AddItemButton from "../ItemDetail/AddItemButton";
+
+function CardProduct({product}) {
+    return (
         <div className={styles.container}>
-            <h1>{product.nombre}</h1>
-            <img src={product.imagen} alt={product.nombre} width="400"/>
-            <h3>${product.valor}</h3>
+            <Card sx={{
+                maxWidth: 345
+            }}>
+                <CardActionArea>
+                    <CardMedia component="img" image={product.imagen} alt={product.nombre}/>
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            {product.nombre}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            ${product.valor}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <Link to={`/item/${product.id}`}>Ver más</Link>
+                <CardActions>
+                    <Button size="small" color="primary">Agregar al carrito</Button>
+                </CardActions>
+                <CardActions>
+                    <IconButton aria-label="remove">
+                        <RemoveIcon/>
+                    </IconButton>
+                    <AddItemButton product={product}/>
+                </CardActions>
+            </Card>
         </div>
-    </Link>
-  )
+    );
 }
 
-export default Card;
+export default CardProduct;

@@ -1,4 +1,8 @@
-.productos{
+.container{
     color: #f6b0b0;
     font-family:Sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }

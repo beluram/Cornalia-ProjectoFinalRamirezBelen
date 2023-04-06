@@ -20,7 +20,7 @@ const ItemListContainer = () => {
   }, [id])
 
       return (
-        <div className={styles.productos}>
+        <div className={styles.container}>
           {products.map((product) => (<Card key={product.id} product={product}/>))}
         </div>
       );
