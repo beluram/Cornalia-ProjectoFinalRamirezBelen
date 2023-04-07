@@ -4,11 +4,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import {Button, CardActionArea, CardActions} from '@mui/material';
-import RemoveIcon from '@mui/icons-material/Remove';
-
-import AddItemButton from "../ItemDetail/AddItemButton";
+import ItemCount from "../ItemDetail/ItemCount";
 
 function CardProduct({product}) {
     return (
@@ -32,10 +29,7 @@ function CardProduct({product}) {
                     <Button size="small" color="primary">Agregar al carrito</Button>
                 </CardActions>
                 <CardActions>
-                    <IconButton aria-label="remove">
-                        <RemoveIcon/>
-                    </IconButton>
-                    <AddItemButton product={product}/>
+                    <ItemCount product={product}/>
                 </CardActions>
             </Card>
         </div>
