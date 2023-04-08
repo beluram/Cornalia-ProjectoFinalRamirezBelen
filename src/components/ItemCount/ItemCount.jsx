@@ -3,13 +3,10 @@ import AddIcon from '@mui/icons-material/Add';
 import {CardActions} from '@mui/material';
 import RemoveIcon from '@mui/icons-material/Remove';
 import {useState} from "react";
-//import Typography from '@mui/material/Typography';
+
 
 export default function ItemCount({product}) {
-    const [quantity,
-        setQuantity] = useState(product.quantity
-        ? 0
-        : product.quantity);
+    const [quantity, setQuantity] = useState(product.quantity? 0: product.quantity);
 
     function handleAddItemClick() {
         if (product.quantity) {
