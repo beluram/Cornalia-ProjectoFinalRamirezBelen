@@ -6,8 +6,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {Button, CardActionArea, CardActions} from '@mui/material';
 import ItemCount from "../ItemCount/ItemCount";
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
 
 function CardProduct({product}) {
+    const cartContext = useContext(CartContext);
+
     return (
         <div className={styles.container}>
             <Card sx={{
