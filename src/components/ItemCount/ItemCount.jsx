@@ -3,11 +3,11 @@ import AddIcon from '@mui/icons-material/Add';
 import {CardActions} from '@mui/material';
 import RemoveIcon from '@mui/icons-material/Remove';
 import {useContext, useState} from "react";
-import CartContext from "../../context/CartContext";
+import {CartContext} from "../../context/CartContext";
 
 
 export default function ItemCount({product}) {
-    const cartContext = useContext(CartContext);
+    const {updateItem, getItems} = useContext(CartContext);
 
     const [quantity, setQuantity] = useState(product.quantity? 0: product.quantity);
 
@@ -32,9 +32,9 @@ export default function ItemCount({product}) {
     }
 
     function handleAddToCart() {
-        console.log(cartContext)
-        console.log("Estoy agregando al carrito")
-    }
+        updateItem(product)
+        getItems()
+   }
 
     return (
         <div>

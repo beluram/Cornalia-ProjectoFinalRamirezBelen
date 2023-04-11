@@ -2,11 +2,8 @@ import styles from './ItemListContainer.module.css';
 import Card from '../Card/Card';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useContext } from "react";
-import CartContext from "../../context/CartContext";
 
 const ItemListContainer = () => {
-  const cartContext = useContext(CartContext);
   
   const [products, setProducts] =useState([]);
   const{id} = useParams()

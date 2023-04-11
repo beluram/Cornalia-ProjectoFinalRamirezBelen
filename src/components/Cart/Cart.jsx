@@ -1,12 +1,13 @@
-//import React, { useContext } from 'react'
-//import CartContextProvider from '../../context/CartContext'
+import React, { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
+import Card from '../Card/Card'
 
 export default function Cart() {
-    //const {cart} =useContext(CartContextProvider)
+    const {updateItem, getItems} = useContext(CartContext)
 
   return (
-    <div>
-        <h1>Finaliza tu compra</h1>
-    </div>
+        <div>
+          {getItems().map((product) => (<Card key={product.id} product={product}/>))}
+        </div>
   )
 }
