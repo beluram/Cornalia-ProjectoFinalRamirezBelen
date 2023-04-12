@@ -22,6 +22,9 @@ function ItemDetail({item}) {
                         <Typography variant="body2" color="text.secondary">
                             ${item.price}
                         </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            {item.data}
+                        </Typography>
                     </CardContent>
                 </CardActionArea>
                 <Link to={"/cart"}>Ir al carrito</Link>
