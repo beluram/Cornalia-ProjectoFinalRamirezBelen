@@ -7,7 +7,7 @@ export default function Cart() {
 
   return (
         <div>
-          {getItems().map((product) => (<Card key={product.id} product={product}/>))}
+          {getItems().map((item) => (<Card key={item.id} item={item}/>))}
         </div>
   )
 }

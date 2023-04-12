@@ -6,33 +6,33 @@ import {useContext, useState} from "react";
 import {CartContext} from "../../context/CartContext";
 
 
-export default function ItemCount({product}) {
+export default function ItemCount({item}) {
     const {updateItem, getItems} = useContext(CartContext);
 
-    const [quantity, setQuantity] = useState(product.quantity? 0: product.quantity);
+    const [quantity, setQuantity] = useState(item.quantity? 0: item.quantity);
 
     function handleAddItemClick() {
-        if (product.quantity) {
-            product.quantity += 1
+        if (item.quantity) {
+            item.quantity += 1
         } else {
-            product.quantity = 1
+            item.quantity = 1
         }
-        setQuantity(product.quantity)
-        console.log("Seleccionaste: " + product.quantity + " de " + product.nombre)
+        setQuantity(item.quantity)
+        console.log("Seleccionaste: " + item.quantity + " de " + item.nombre)
     }
 
     function handleRemoveItemClick() {
-        if (product.quantity) {
-            product.quantity -= 1
+        if (item.quantity) {
+            item.quantity -= 1
         } else {
-            product.quantity = 0
+            item.quantity = 0
         }
-        setQuantity(product.quantity)
-        console.log("Seleccionaste: " + product.quantity + " de " + product.nombre)
+        setQuantity(item.quantity)
+        console.log("Seleccionaste: " + item.quantity + " de " + item.nombre)
     }
 
     function handleAddToCart() {
-        updateItem(product)
+        updateItem(item)
         getItems()
    }
 

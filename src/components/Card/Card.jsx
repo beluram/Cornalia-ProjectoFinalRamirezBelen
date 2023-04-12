@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import {Button, CardActionArea, CardActions} from '@mui/material';
 import ItemCount from "../ItemCount/ItemCount";
 
-function CardProduct({product}) {
+function CardProduct({item}) {
 
     return (
         <div className={styles.container}>
@@ -15,22 +15,22 @@ function CardProduct({product}) {
                 maxWidth: 345
             }}>
                 <CardActionArea>
-                    <CardMedia component="img" image={product.imagen} alt={product.nombre}/>
+                    <CardMedia component="img" image={item.image} alt={item.name}/>
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                            {product.nombre}
+                            {item.name}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            ${product.valor}
+                            ${item.price}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
-                <Link to={`/item/${product.id}`}>Ver más</Link>
+                <Link to={`/item/${item.id}`}>Ver más</Link>
                 <CardActions>
                     <Button size="small" color="primary">Agregar al carrito</Button>
                 </CardActions>
                 <CardActions>
-                    <ItemCount product={product}/>
+                    <ItemCount item={item}/>
                 </CardActions>
             </Card>
         </div>
