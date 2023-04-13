@@ -1,7 +1,4 @@
-import {IconButton} from "@mui/material";
-import { AddIcon } from '@mui/icons-material/Add';
 import {CardActions} from '@mui/material';
-import { RemoveIcon } from '@mui/icons-material/Remove';
 import {useContext, useState} from "react";
 import {CartContext} from "../../context/CartContext";
 import {Button} from '@mui/material';
@@ -44,13 +41,13 @@ function ItemCount({item}) {
                 <Button size="small" color="primary" onClick={handleAddToCart}>Agregar al carrito</Button>
             </CardActions>
             <CardActions>
-                <IconButton aria-label="remove" color="primary" onClick={handleRemoveItemClick}>
-                    <RemoveIcon/>
-                </IconButton>
+                <Button aria-label="remove" color="primary" onClick={handleRemoveItemClick}>
+                    -
+                </Button>
                 <p>{quantity}</p>
-                <IconButton aria-label="add" color="primary" onClick={handleAddItemClick}>
-                    <AddIcon/>
-                </IconButton>
+                <Button aria-label="add" color="primary" onClick={handleAddItemClick}>
+                    +
+                </Button>
             </CardActions>
         </div>
     );
