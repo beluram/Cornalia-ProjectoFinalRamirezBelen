@@ -1,15 +1,13 @@
-import { useContext } from "react";
 import { BsFillCartFill } from "react-icons/bs";
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../context/CartContext'
+import { useContext } from "react";
 
 const CartWidget = () => {
-    const {setQuantity} = useContext (CartContext)
-
-    const quantity = setQuantity()
+    const {totalProducts} = useContext(CartContext);
     return (
     <div>
         <BsFillCartFill />
-        <span>{quantity}</span>
+        <span>{totalProducts() || ' '}</span>
     </div>
     )
 };

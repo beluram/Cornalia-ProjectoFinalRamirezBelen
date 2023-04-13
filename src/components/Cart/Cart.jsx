@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { CartContext } from '../../context/CartContext'
+//mport { CartContext } from '../../context/CartContext'
 import Card from '../Card/Card'
 
 export default function Cart() {
-    const {updateItem, getItems} = useContext(CartContext)
+    //const {} = useContext(CartContext)
 
   return (
         <div>
