@@ -4,19 +4,22 @@ const CartContext = createContext()
 
 const CartProvider = ({children}) => {
 
-    const [items, setItems] = useState([])
+    const [cart, setCart] = useState([])
 
-    const updateItem = (product) => {
-        setItems([...items, product])
-        console.log(items)
+    const addProduct =(item, newQuantity) =>{
+        const {quantity = 0 } = cart.find(prod => prod.item.id === item.id) || {};
+        const newCart = cart.filter(prod => prod.item.id !== item.id);
+        setCart ([...newCart, {...item, quantity: quantity + newQuantity}]);
     }
 
-    const getItems= () => {
-        return items
-    }
+    const clearCart = () => setCart ([]); 
+
+    const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
+
+    const removeProduct = (id) => setCart(cart.filter(product => product.id !==id));
 
     return (
-        <CartContext.Provider value={{updateItem, getItems}}>
+        <CartContext.Provider value={{ addProduct, clearCart, isInCart, removeProduct}}>
             {children}
         </CartContext.Provider>
     )

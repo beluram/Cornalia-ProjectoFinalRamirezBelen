@@ -4,7 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {Button, CardActionArea, CardActions} from '@mui/material';
+import { CardActionArea, CardActions} from '@mui/material';
 import ItemCount from "../ItemCount/ItemCount";
 
 function CardProduct({item}) {
@@ -26,9 +26,6 @@ function CardProduct({item}) {
                     </CardContent>
                 </CardActionArea>
                 <Link to={`/item/${item.id}`}>Ver más</Link>
-                <CardActions>
-                    <Button size="small" color="primary">Agregar al carrito</Button>
-                </CardActions>
                 <CardActions>
                     <ItemCount item={item}/>
                 </CardActions>

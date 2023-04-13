@@ -1,37 +1,31 @@
 import {Link} from "react-router-dom";
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import {CardActionArea, CardActions} from '@mui/material';
-import ItemCount from "../ItemCount/ItemCount";
+import { ItemCount } from "../ItemCount/ItemCount";
+import { useState } from "react";
+import { useCartContext } from '../../context/CartContext'
 
 function ItemDetail({item}) {
+    const [goToCart, setGoToCart] = useState (false)
+    const {addProduct} = useCartContext();
 
+    const onAdd = (quantity) =>{
+        setGoToCart (true);
+        addProduct(item, quantity)
+    }
     return (
         <div>
-            <Card sx={{
-                maxWidth: 345
-            }}>
-                <CardActionArea>
-                    <CardMedia component="img" image={item.image} alt={item.name}/>
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            {item.name}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            ${item.price}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            {item.data}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <Link to={"/cart"}>Ir al carrito</Link>
-                <CardActions>
-                    <ItemCount item={item}/>
-                </CardActions>
-            </Card>
+            <img src={item.image} alt={item.name}/>
+            <div>
+                <h1>{item.name}</h1>
+                <p>${item.price}</p>
+                <p>{item.data}</p>
+            </div>
+            <div>
+                {
+                    goToCart
+                    ?  <Link to={"/cart"}>Ir al carrito</Link>
+                    : <ItemCount item={item} onAdd={onAdd}/>
+                    }
+            </div>
         </div>
     );
 }

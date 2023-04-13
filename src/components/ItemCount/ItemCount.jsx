@@ -1,15 +1,18 @@
 import {IconButton} from "@mui/material";
-import AddIcon from '@mui/icons-material/Add';
+import { AddIcon } from '@mui/icons-material/Add';
 import {CardActions} from '@mui/material';
-import RemoveIcon from '@mui/icons-material/Remove';
+import { RemoveIcon } from '@mui/icons-material/Remove';
 import {useContext, useState} from "react";
 import {CartContext} from "../../context/CartContext";
+import {Button} from '@mui/material';
 
+function ItemCount({item}) {
+    const {addProduct} = useContext(CartContext);
 
-export default function ItemCount({item}) {
-    const {updateItem, getItems} = useContext(CartContext);
-
-    const [quantity, setQuantity] = useState(item.quantity? 0: item.quantity);
+    const [quantity,
+        setQuantity] = useState(item.quantity
+        ? 0
+        : item.quantity);
 
     function handleAddItemClick() {
         if (item.quantity) {
@@ -32,12 +35,14 @@ export default function ItemCount({item}) {
     }
 
     function handleAddToCart() {
-        updateItem(item)
-        getItems()
-   }
+        addProduct()
+    }
 
     return (
         <div>
+            <CardActions>
+                <Button size="small" color="primary" onClick={handleAddToCart}>Agregar al carrito</Button>
+            </CardActions>
             <CardActions>
                 <IconButton aria-label="remove" color="primary" onClick={handleRemoveItemClick}>
                     <RemoveIcon/>
@@ -46,11 +51,10 @@ export default function ItemCount({item}) {
                 <IconButton aria-label="add" color="primary" onClick={handleAddItemClick}>
                     <AddIcon/>
                 </IconButton>
-                <IconButton aria-label="add" color="primary" onClick={handleAddToCart}>
-                    <AddIcon/>
-                </IconButton>
             </CardActions>
         </div>
     );
 
 }
+
+export default ItemCount
