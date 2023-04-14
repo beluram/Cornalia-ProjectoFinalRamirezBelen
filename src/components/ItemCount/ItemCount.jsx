@@ -18,7 +18,7 @@ function ItemCount({item}) {
             item.quantity = 1
         }
         setQuantity(item.quantity)
-        console.log("Seleccionaste: " + item.quantity + " de " + item.nombre)
+        console.log("Seleccionaste: " + item.quantity + " de " + item.name)
     }
 
     function handleRemoveItemClick() {
@@ -28,11 +28,11 @@ function ItemCount({item}) {
             item.quantity = 0
         }
         setQuantity(item.quantity)
-        console.log("Seleccionaste: " + item.quantity + " de " + item.nombre)
+        console.log("Seleccionaste: " + item.quantity + " de " + item.name)
     }
 
     function handleAddToCart() {
-        addProduct()
+        addProduct(item)
     }
 
     return (

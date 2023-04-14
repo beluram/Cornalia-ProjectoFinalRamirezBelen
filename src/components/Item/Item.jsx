@@ -8,10 +8,10 @@ const Item = ({ item }) => {
   return (
     <div>
       <div>
-        <img src={item.image} alt={item.title} className={styles.cardImage} />
+        <img src={item.image} alt={item.title} />
         <div >
           <p>{item.title}</p>
-          <p>Precio unitario $ {item.price}</p>
+          <p>Precio $ {item.price}</p>
           <p>Subtotal $ {item.quantity * item.price}</p>
           <button onClick={() => removeProduct(item.id)}>
             Eliminar Producto

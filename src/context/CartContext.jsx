@@ -5,47 +5,46 @@ const CartContext = createContext()
 const CartProvider = ({children}) => {
 
     const [cart,
-        setCart] = useState([])
+        setCart] = useState(new Map([]))
 
-    const addProduct = (item, newQuantity) => {
-        cart.map((item) => {
-        const { quantity = 0 } = cart.find(prod => prod.item.id === item.id) || {};
-        const newCart = cart.filter(prod => prod.item.id !== item.id);
-        setCart([
-            ...newCart, {
-                ...item,
-                quantity: quantity + newQuantity
-            }
-        ]);
-        })
+    const addProduct = (item) => {
+        setCart(cart.set(item.id , item))
     }
 
     const totalPrice = () => {
-        return cart.reduce((prev, act) => prev + act.quantity * act.price, 0);
+        let accum = 0
+        cart.forEach((item) => accum += item.quantity * item.price)
+        return accum;
     };
 
     const totalProducts = () => {
-        return cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0);
+        let accum = 0
+        cart.forEach((item) => accum += item.quantity)
+        return accum
     };
 
-    const clearCart = () => setCart([]);
+    const clearCart = () => setCart(Map([]));
 
-    const isInCart = (id) => cart.find(product => product.id === id)
+    const isInCart = (id) => cart.has(id)
         ? true
         : false;
 
-    const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
+    const removeProduct = (id) => 
+    {
+        cart.delete(id)
+        setCart(cart);
+    }
 
     return (
         <CartContext.Provider
             value={{
+            cart,
             addProduct,
             totalPrice,
             totalProducts,
             clearCart,
             isInCart,
             removeProduct,
-            cart
         }}>
             {children}
         </CartContext.Provider>

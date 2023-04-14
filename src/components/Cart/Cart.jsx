@@ -1,34 +1,39 @@
-import React from "react";
-import { CartContext } from "../../context/CartContext";
-import { Link } from "react-router-dom";
+import React, {useContext, useState} from "react";
+import {CartContext} from "../../context/CartContext";
+import {Link} from "react-router-dom";
 import Item from "../Item/Item";
-import styles from "./Cart.module.css";
 
 const Cart = () => {
-  const { cart, totalPrice } = useContext(CartContext);
+    const {cart, totalProducts, totalPrice} = useContext(CartContext);
 
-  if (cart.length === 0) {
+    if (cart.size === 0) {
+        return (
+            <div>
+                <h1>Su carrito esta vacio</h1>
+                <Link to="/">
+                    Comprar
+                </Link>
+            </div>
+        );
+    }
+
     return (
-      <div className={styles.container}>
-        <h1>Su carrito esta vacio</h1>
-        <Link to="/" className={styles.buttonComprar}>
-          Conprar
-        </Link>
-      </div>
+        <div>
+            <div>
+            {(cart.size==0 ? [] : Array.from(cart.values())).map((value,key) => 
+              <Item key={key} item={value} />)}
+            </div>
+            <div>
+                <p>TOTAL PRODUCTOS {totalProducts()}</p>
+                <p>TOTAL PRECIO {totalPrice()}</p>
+            </div>
+            <div>
+            <Link to='/Checkout'>
+                    Finalizar compra
+            </Link>
+            </div>
+        </div>
     );
-  }
-
-  return (
-    <div className={styles.containerCompra}>
-      {cart.map((item) => (
-        <Item key={item.id} item={item} />
-      ))}
-      <div className={styles.ContainerFinalCart}>
-        <p className={styles.totalCart}>Total $ {totalPrice()}</p>
-        <button className={styles.buttonFinalCompra}>Finalizar Compra</button>
-      </div>
-    </div>
-  );
 };
 
 export default Cart
